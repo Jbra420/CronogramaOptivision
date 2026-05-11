@@ -2,7 +2,7 @@ import '../style.css';
 
 document.addEventListener('DOMContentLoaded', () => {
   setupScrollAnimations();
-  setupTeamInteractions();
+  setupTaskTracking();
 });
 
 function setupScrollAnimations() {
@@ -21,45 +21,78 @@ function setupScrollAnimations() {
     });
   }, observerOptions);
 
-  const elementsToAnimate = document.querySelectorAll('.timeline-week, .milestone-card');
-  
+  const elementsToAnimate = document.querySelectorAll('.table-section');
   elementsToAnimate.forEach(el => {
-    // Remove the class if it exists to allow the observer to trigger it
     el.classList.remove('slide-up');
     (el as HTMLElement).style.opacity = '0';
     observer.observe(el);
   });
 }
 
-function setupTeamInteractions() {
-  const teamCards = document.querySelectorAll('.team-card');
-  const allTasks = document.querySelectorAll('.activities-list li');
+function setupTaskTracking() {
+  const checkboxes = document.querySelectorAll<HTMLInputElement>('.task-checkbox input');
+  const progressText = document.getElementById('progress-text');
+  const resetBtn = document.getElementById('reset-btn');
+  const totalTasks = checkboxes.length;
 
-  teamCards.forEach(card => {
-    card.addEventListener('mouseenter', () => {
-      const memberId = card.getAttribute('data-member');
-      if (!memberId) return;
+  // Load saved state
+  const savedState = JSON.parse(localStorage.getItem('optivisionTasks') || '{}');
 
-      // Dim all tasks
-      allTasks.forEach(task => {
-        (task as HTMLElement).style.opacity = '0.3';
-        (task as HTMLElement).style.transition = 'opacity 0.3s ease';
-      });
+  function updateProgress() {
+    const checkedCount = document.querySelectorAll('.task-checkbox input:checked').length;
+    const percentage = Math.round((checkedCount / totalTasks) * 100);
+    if (progressText) {
+      progressText.textContent = `${percentage}%`;
+    }
+  }
 
-      // Highlight tasks for this member (including team tasks)
-      const memberTasks = document.querySelectorAll(`.activities-list li[data-member="${memberId}"], .activities-list li[data-member="equipo"], .activities-list li[data-member*="${memberId}"]`);
-      memberTasks.forEach(task => {
-        (task as HTMLElement).style.opacity = '1';
-        (task as HTMLElement).style.transform = 'translateX(5px)';
-      });
-    });
+  function handleCheckboxChange(checkbox: HTMLInputElement) {
+    const taskId = checkbox.getAttribute('data-task-id');
+    if (!taskId) return;
 
-    card.addEventListener('mouseleave', () => {
-      // Reset all tasks
-      allTasks.forEach(task => {
-        (task as HTMLElement).style.opacity = '1';
-        (task as HTMLElement).style.transform = 'translateX(0)';
-      });
+    const row = checkbox.closest('tr');
+    if (checkbox.checked) {
+      row?.classList.add('completed');
+      savedState[taskId] = true;
+    } else {
+      row?.classList.remove('completed');
+      savedState[taskId] = false;
+    }
+
+    localStorage.setItem('optivisionTasks', JSON.stringify(savedState));
+    updateProgress();
+  }
+
+  checkboxes.forEach(checkbox => {
+    const taskId = checkbox.getAttribute('data-task-id');
+    if (taskId && savedState[taskId]) {
+      checkbox.checked = true;
+      checkbox.closest('tr')?.classList.add('completed');
+    }
+
+    checkbox.addEventListener('change', (e) => {
+      handleCheckboxChange(e.target as HTMLInputElement);
     });
   });
+
+  // Initial calculation
+  updateProgress();
+
+  // Reset functionality
+  if (resetBtn) {
+    resetBtn.addEventListener('click', () => {
+      if (confirm('¿Estás seguro de que deseas reiniciar todo el progreso del proyecto?')) {
+        localStorage.removeItem('optivisionTasks');
+        checkboxes.forEach(checkbox => {
+          checkbox.checked = false;
+          checkbox.closest('tr')?.classList.remove('completed');
+        });
+        // Clear saved state object
+        for (const key in savedState) {
+          delete savedState[key];
+        }
+        updateProgress();
+      }
+    });
+  }
 }
