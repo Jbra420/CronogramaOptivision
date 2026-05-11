@@ -26,7 +26,7 @@ function setupScrollAnimations() {
   elementsToAnimate.forEach(el => {
     // Remove the class if it exists to allow the observer to trigger it
     el.classList.remove('slide-up');
-    el.style.opacity = '0';
+    (el as HTMLElement).style.opacity = '0';
     observer.observe(el);
   });
 }
@@ -42,8 +42,8 @@ function setupTeamInteractions() {
 
       // Dim all tasks
       allTasks.forEach(task => {
-        task.style.opacity = '0.3';
-        task.style.transition = 'opacity 0.3s ease';
+        (task as HTMLElement).style.opacity = '0.3';
+        (task as HTMLElement).style.transition = 'opacity 0.3s ease';
       });
 
       // Highlight tasks for this member (including team tasks)
@@ -57,8 +57,8 @@ function setupTeamInteractions() {
     card.addEventListener('mouseleave', () => {
       // Reset all tasks
       allTasks.forEach(task => {
-        task.style.opacity = '1';
-        task.style.transform = 'translateX(0)';
+        (task as HTMLElement).style.opacity = '1';
+        (task as HTMLElement).style.transform = 'translateX(0)';
       });
     });
   });
