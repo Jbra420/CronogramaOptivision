@@ -1,0 +1,244 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>OPTIVISION - Backlog Final de Proyecto</title>
+    <meta name="description" content="Cronograma del proyecto OptiVision bajo la metodología Mobile-D" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./style.css">
+  </head>
+  <body>
+    <div class="background-effects">
+      <div class="glow-orb orb-1"></div>
+      <div class="glow-orb orb-2"></div>
+      <div class="glow-orb orb-3"></div>
+    </div>
+
+    <div class="app-container">
+      <header class="hero-header fade-in">
+        <div class="brand">
+          <div class="logo-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg>
+          </div>
+          <h1>OPTIVISION</h1>
+        </div>
+        <h2>Backlog Final de Proyecto</h2>
+        
+        <div class="project-stats">
+          <div class="stat-badge">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+            <span>Metodología Mobile-D</span>
+          </div>
+          <div class="stat-badge">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            <span>Ciclo: 3 Semanas</span>
+          </div>
+          <div class="stat-badge">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+            <span>7 Hitos (Reuniones)</span>
+          </div>
+        </div>
+      </header>
+
+      <section class="team-section slide-up">
+        <div class="section-header">
+          <h3>Equipo y Roles</h3>
+          <p>Los responsables del desarrollo de Servicios Ópticos Digitales</p>
+        </div>
+        
+        <div class="team-grid">
+          <div class="team-card" data-member="juan">
+            <div class="avatar gradient-1">JU</div>
+            <div class="member-info">
+              <h4>Juan</h4>
+              <span class="role">Frontend & Especialista AR</span>
+            </div>
+          </div>
+          <div class="team-card" data-member="jessica">
+            <div class="avatar gradient-2">JE</div>
+            <div class="member-info">
+              <h4>Jessica</h4>
+              <span class="role">UI/UX & Activos Gráficos</span>
+            </div>
+          </div>
+          <div class="team-card" data-member="carlos">
+            <div class="avatar gradient-3">CA</div>
+            <div class="member-info">
+              <h4>Carlos</h4>
+              <span class="role">Backend & Admin BD</span>
+            </div>
+          </div>
+          <div class="team-card" data-member="alexis">
+            <div class="avatar gradient-4">AL</div>
+            <div class="member-info">
+              <h4>Alexis</h4>
+              <span class="role">Project Manager & QA</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="timeline-section slide-up delay-1">
+        <div class="section-header">
+          <h3>Cronograma de Sprints</h3>
+          <p>Evolución del proyecto semana a semana</p>
+        </div>
+
+        <div class="timeline">
+          <!-- SEMANA 1 -->
+          <div class="timeline-week">
+            <div class="week-header">
+              <div class="week-number">S1</div>
+              <div class="week-title">
+                <h4>Semana 1: Cimientos y Estrategia</h4>
+                <span>Fase 1: Exploración</span>
+              </div>
+            </div>
+            
+            <div class="milestones">
+              <div class="milestone-card">
+                <div class="milestone-badge">Hito 1</div>
+                <div class="milestone-content">
+                  <div class="milestone-header">
+                    <h5>Reunión de Inicio (Kick-off)</h5>
+                    <span class="day">Jueves</span>
+                  </div>
+                  <p class="objective"><strong>Objetivo:</strong> Definir el alcance y alinear el concepto de "Servicios Ópticos Digitales".</p>
+                  <ul class="activities-list">
+                    <li data-member="alexis"><span class="tag alexis">Alexis</span> Redactar las 4 Historias de Usuario (HU) principales.</li>
+                    <li data-member="jessica"><span class="tag jessica">Jessica</span> Definir paleta de colores y tipografía de la marca OptiVision.</li>
+                    <li data-member="juan"><span class="tag juan">Juan</span> Evaluar librerías AR (ViroReact vs ARKit/ARCore) para React Native.</li>
+                    <li data-member="carlos"><span class="tag carlos">Carlos</span> Configurar el esquema de datos para "Marcos", "Citas" y "Usuarios".</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- SEMANA 2 -->
+          <div class="timeline-week">
+            <div class="week-header">
+              <div class="week-number">S2</div>
+              <div class="week-title">
+                <h4>Semana 2: Configuración y Desarrollo Base</h4>
+                <span>Fase 2 e Inicio de Producción</span>
+              </div>
+            </div>
+            
+            <div class="milestones">
+              <div class="milestone-card">
+                <div class="milestone-badge">Hito 2</div>
+                <div class="milestone-content">
+                  <div class="milestone-header">
+                    <h5>Sincronización Técnica</h5>
+                    <span class="day">Lunes</span>
+                  </div>
+                  <p class="objective"><strong>Objetivo:</strong> Preparar el entorno de desarrollo y prototipos iniciales.</p>
+                  <ul class="activities-list">
+                    <li data-member="juan"><span class="tag juan">Juan</span> Configurar repositorio en GitHub y arquitectura de carpetas.</li>
+                    <li data-member="jessica"><span class="tag jessica">Jessica</span> Entregar Wireframes (bocetos) de navegación.</li>
+                    <li data-member="carlos"><span class="tag carlos">Carlos</span> Vincular la App con Firebase y activar el módulo de Autenticación.</li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="milestone-card">
+                <div class="milestone-badge">Hito 3</div>
+                <div class="milestone-content">
+                  <div class="milestone-header">
+                    <h5>Demo de Funcionalidad Base</h5>
+                    <span class="day">Jueves</span>
+                  </div>
+                  <p class="objective"><strong>Objetivo:</strong> Validar que el flujo de usuario inicial funcione.</p>
+                  <ul class="activities-list">
+                    <li data-member="equipo"><span class="tag equipo">Equipo</span> Probar el registro de usuarios y el inicio de sesión.</li>
+                    <li data-member="juan"><span class="tag juan">Juan</span> Presentar el menú principal de la app.</li>
+                    <li data-member="alexis"><span class="tag alexis">Alexis</span> Iniciar la redacción del documento técnico de las Fases 1 y 2.</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- SEMANA 3 -->
+          <div class="timeline-week">
+            <div class="week-header">
+              <div class="week-number">S3</div>
+              <div class="week-title">
+                <h4>Semana 3: Realidad Aumentada, Calidad y Cierre</h4>
+                <span>Fase de Producción II y Entrega</span>
+              </div>
+            </div>
+            
+            <div class="milestones">
+              <div class="milestone-card">
+                <div class="milestone-badge highlight">Hito 4</div>
+                <div class="milestone-content">
+                  <div class="milestone-header">
+                    <h5>Sprint de Innovación (AR & Negocio)</h5>
+                    <span class="day">Lunes</span>
+                  </div>
+                  <p class="objective"><strong>Objetivo:</strong> Implementar las funciones estrella: Probador Virtual y Citas.</p>
+                  <ul class="activities-list">
+                    <li data-member="juan"><span class="tag juan">Juan</span> Integrar la cámara con el motor AR para superposición de lentes.</li>
+                    <li data-member="carlos"><span class="tag carlos">Carlos</span> Programar el módulo de agendamiento de citas en tiempo real.</li>
+                    <li data-member="jessica"><span class="tag jessica">Jessica</span> Finalizar el diseño Hi-Fi (Alta resolución) de todas las pantallas.</li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="milestone-card">
+                <div class="milestone-badge">Hito 5</div>
+                <div class="milestone-content">
+                  <div class="milestone-header">
+                    <h5>Revisión de Integración</h5>
+                    <span class="day">Jueves</span>
+                  </div>
+                  <p class="objective"><strong>Objetivo:</strong> Verificar que todos los módulos hablen entre sí.</p>
+                  <ul class="activities-list">
+                    <li data-member="carlos-juan"><span class="tag carlos-juan">Carlos/Juan</span> Asegurar que los datos del catálogo se carguen en la interfaz.</li>
+                    <li data-member="alexis"><span class="tag alexis">Alexis</span> Iniciar el guion y preparación de la exposición en video.</li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="milestone-card">
+                <div class="milestone-badge warning">Hito 6</div>
+                <div class="milestone-content">
+                  <div class="milestone-header">
+                    <h5>Control de Calidad (QA) Final</h5>
+                    <span class="day">Lunes</span>
+                  </div>
+                  <p class="objective"><strong>Objetivo:</strong> Detectar fallos (bugs) y estabilizar la aplicación.</p>
+                  <ul class="activities-list">
+                    <li data-member="equipo"><span class="tag equipo">Equipo</span> Realizar pruebas de estrés y corrección de errores críticos.</li>
+                    <li data-member="alexis"><span class="tag alexis">Alexis</span> Grabación de la exposición explicando la metodología Mobile-D.</li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="milestone-card">
+                <div class="milestone-badge success">Hito 7</div>
+                <div class="milestone-content">
+                  <div class="milestone-header">
+                    <h5>Cierre de Proyecto y Entrega Final</h5>
+                    <span class="day">Jueves</span>
+                  </div>
+                  <p class="objective"><strong>Objetivo:</strong> Entrega del documento y enlace del video.</p>
+                  <ul class="activities-list">
+                    <li data-member="alexis"><span class="tag alexis">Alexis</span> Carga final del documento PDF y link de exposición.</li>
+                    <li data-member="equipo"><span class="tag equipo">Equipo</span> Sesión de retrospectiva sobre el cumplimiento de los tiempos.</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
