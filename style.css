@@ -309,3 +309,66 @@ tr.completed .cell-active::after {
   .task-text { font-size: 0.85rem; }
   .gantt-table th, .gantt-table td { padding: 0.75rem; }
 }
+
+/* Deliverables Section */
+.section-header {
+  margin-bottom: 2rem; text-align: center;
+}
+.section-header p { color: var(--text-muted); }
+
+.deliverables-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.deliverable-card {
+  background: var(--bg-card);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--border);
+  border-radius: 1rem;
+  padding: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.deliverable-card::before {
+  content: ''; position: absolute; top: 0; left: 0;
+  width: 4px; height: 100%;
+  background: var(--primary);
+  opacity: 0; transition: opacity 0.3s ease;
+}
+
+.deliverable-card[data-member="juan"]::before { background: var(--juan-color); }
+.deliverable-card[data-member="jessica"]::before { background: var(--jessica-color); }
+.deliverable-card[data-member="carlos"]::before { background: var(--carlos-color); }
+.deliverable-card[data-member="alexis"]::before { background: var(--alexis-color); }
+
+.deliverable-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+  border-color: rgba(255,255,255,0.2);
+}
+.deliverable-card:hover::before { opacity: 1; }
+
+.avatar {
+  width: 3.5rem; height: 3.5rem; min-width: 3.5rem;
+  border-radius: 50%; display: flex; align-items: center; justify-content: center;
+  font-weight: 700; font-size: 1.2rem; color: white;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+.gradient-1 { background: linear-gradient(135deg, #3b82f6, #2563eb); }
+.gradient-2 { background: linear-gradient(135deg, #ec4899, #db2777); }
+.gradient-3 { background: linear-gradient(135deg, #10b981, #059669); }
+.gradient-4 { background: linear-gradient(135deg, #f59e0b, #d97706); }
+
+.deliverable-info h4 { font-size: 1.1rem; font-weight: 600; margin-bottom: 0.2rem; }
+.deliverable-info p { font-size: 0.85rem; color: var(--text-muted); line-height: 1.4; }
+
+.delay-1 { animation-delay: 0.3s; }
+
