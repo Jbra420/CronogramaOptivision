@@ -449,3 +449,707 @@ tr.completed .cell-active::after {
 }
 .modal-responsable { display: flex; align-items: center; gap: 0.5rem; }
 .text-sm { font-size: 0.8rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.5px; }
+
+/* ==========================================================================
+   HUB DE CRONOGRAMAS Y TARJETAS SELECCIONABLES (Sleek Glassmorphic Grid)
+   ========================================================================== */
+.hub-section {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.section-title-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.section-title-container h3 {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: -0.5px;
+}
+
+.section-title-container p {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+.workspace-switcher-section {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin-bottom: 2rem;
+}
+
+.workspace-dock-container {
+  display: inline-flex;
+  align-items: center;
+  background: rgba(15, 23, 42, 0.65);
+  backdrop-filter: blur(25px);
+  -webkit-backdrop-filter: blur(25px);
+  border-radius: 40px;
+  padding: 0.35rem 0.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4), 0 0 20px rgba(59, 130, 246, 0.04);
+  gap: 0.25rem;
+  max-width: 100%;
+  overflow-x: auto;
+}
+
+.dock-label {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.5rem 1.15rem;
+  border-right: 1px solid rgba(255, 255, 255, 0.08);
+  font-size: 0.68rem;
+  font-weight: 900;
+  letter-spacing: 1.5px;
+  color: var(--text-muted);
+  flex-shrink: 0;
+}
+
+.dock-label svg {
+  width: 1rem;
+  height: 1rem;
+  color: var(--primary);
+}
+
+.workspace-tabs-bar {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.workspace-tab {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.5rem 1.25rem;
+  border-radius: 30px;
+  border: 1px solid transparent;
+  background: transparent;
+  cursor: pointer;
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  font-weight: 600;
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+  flex-shrink: 0;
+  user-select: none;
+}
+
+.workspace-tab:hover {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.workspace-tab.active {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.tab-led {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.15);
+  transition: all 0.3s ease;
+}
+
+.tab-icon-frame {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-muted);
+  transition: all 0.3s ease;
+}
+
+.tab-icon-frame svg {
+  width: 1.05rem;
+  height: 1.05rem;
+}
+
+.tab-title-text {
+  letter-spacing: 0.2px;
+}
+
+.tab-percentage {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 0.1rem 0.5rem;
+  border-radius: 20px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  transition: all 0.3s ease;
+}
+
+/* --------------------------------------------------------------------------
+   WORKSPACE TAB SPECIFIC COLOR SCHEMES
+   -------------------------------------------------------------------------- */
+/* OptiVision Active Tab */
+.workspace-tab.active.optivision {
+  border-color: rgba(59, 130, 246, 0.35);
+  box-shadow: 0 0 15px rgba(59, 130, 246, 0.2), inset 0 0 8px rgba(59, 130, 246, 0.08);
+  background: rgba(59, 130, 246, 0.06);
+}
+
+.workspace-tab.active.optivision .tab-led {
+  background: #3b82f6;
+  box-shadow: 0 0 8px #3b82f6;
+}
+
+.workspace-tab.active.optivision .tab-icon-frame {
+  color: #60a5fa;
+}
+
+.workspace-tab.active.optivision .tab-percentage {
+  background: rgba(59, 130, 246, 0.15);
+  border-color: rgba(59, 130, 246, 0.2);
+  color: #93c5fd;
+}
+
+/* Proyecto Piensa Active Tab */
+.workspace-tab.active.proyecto-piensa {
+  border-color: rgba(6, 182, 212, 0.35);
+  box-shadow: 0 0 15px rgba(6, 182, 212, 0.2), inset 0 0 8px rgba(6, 182, 212, 0.08);
+  background: rgba(6, 182, 212, 0.06);
+}
+
+.workspace-tab.active.proyecto-piensa .tab-led {
+  background: #06b6d4;
+  box-shadow: 0 0 8px #06b6d4;
+}
+
+.workspace-tab.active.proyecto-piensa .tab-icon-frame {
+  color: #22d3ee;
+}
+
+.workspace-tab.active.proyecto-piensa .tab-percentage {
+  background: rgba(6, 182, 212, 0.15);
+  border-color: rgba(6, 182, 212, 0.2);
+  color: #67e8f9;
+}
+
+/* Custom Loaded Workspace Active Tab */
+.workspace-tab.active:not(.optivision):not(.proyecto-piensa) {
+  border-color: rgba(139, 92, 246, 0.35);
+  box-shadow: 0 0 15px rgba(139, 92, 246, 0.2), inset 0 0 8px rgba(139, 92, 246, 0.08);
+  background: rgba(139, 92, 246, 0.06);
+}
+
+.workspace-tab.active:not(.optivision):not(.proyecto-piensa) .tab-led {
+  background: #8b5cf6;
+  box-shadow: 0 0 8px #8b5cf6;
+}
+
+.workspace-tab.active:not(.optivision):not(.proyecto-piensa) .tab-icon-frame {
+  color: #c084fc;
+}
+
+.workspace-tab.active:not(.optivision):not(.proyecto-piensa) .tab-percentage {
+  background: rgba(139, 92, 246, 0.15);
+  border-color: rgba(139, 92, 246, 0.2);
+  color: #d8b4fe;
+}
+
+/* --------------------------------------------------------------------------
+   ADD TAB (CARGAR PROYECTO)
+   -------------------------------------------------------------------------- */
+.workspace-tab.add-tab {
+  border: 1px dashed rgba(255, 255, 255, 0.15);
+  color: var(--text-muted);
+  gap: 0.45rem;
+}
+
+.workspace-tab.add-tab:hover {
+  border-color: var(--primary);
+  color: #fff;
+  background: rgba(59, 130, 246, 0.04);
+}
+
+.add-tab-icon {
+  width: 0.95rem;
+  height: 0.95rem;
+  transition: all 0.3s ease;
+}
+
+.workspace-tab.add-tab:hover .add-tab-icon {
+  transform: rotate(90deg);
+  color: var(--primary);
+}
+
+
+
+
+/* ==========================================================================
+   ACTIVE SCHEDULE HEADER & DETAILED INFO BAR
+   ========================================================================== */
+.active-schedule-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.platform-badge {
+  display: inline-block;
+  padding: 0.2rem 0.6rem;
+  border-radius: 2rem;
+  font-size: 0.65rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  background: rgba(59, 130, 246, 0.15);
+  border: 1px solid rgba(59, 130, 246, 0.3);
+  color: var(--primary);
+  margin-bottom: 0.5rem;
+}
+
+.platform-badge.custom {
+  background: rgba(6, 182, 212, 0.15);
+  border-color: rgba(6, 182, 212, 0.3);
+  color: var(--accent);
+}
+
+.active-schedule-info h3 {
+  font-size: 1.7rem;
+  font-weight: 800;
+  color: white;
+}
+
+.active-schedule-info p {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+}
+
+.schedule-actions-bar {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.delete-btn {
+  background: rgba(239, 68, 68, 0.1);
+  border: 1px solid rgba(239, 68, 68, 0.2);
+  color: #f87171;
+  padding: 0.5rem 1rem;
+  border-radius: 2rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: inherit;
+  font-size: 0.85rem;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.delete-btn:hover {
+  background: #ef4444;
+  color: white;
+  border-color: #ef4444;
+  box-shadow: 0 4px 12px rgba(239, 68, 68, 0.4);
+}
+
+.delete-btn svg {
+  width: 0.9rem;
+  height: 0.9rem;
+}
+
+/* ==========================================================================
+   MODAL LARGE & PLATFORM TABS STYLING
+   ========================================================================== */
+.modal-large {
+  max-width: 680px !important;
+  padding: 2.25rem !important;
+}
+
+.modal-subtitle {
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  margin-top: 0.25rem;
+}
+
+.modal-tabs {
+  display: flex;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 1.5rem;
+  gap: 0.5rem;
+}
+
+.tab-btn {
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid transparent;
+  color: var(--text-muted);
+  padding: 0.75rem 1.25rem;
+  font-family: inherit;
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.tab-btn:hover {
+  color: white;
+}
+
+.tab-btn.active {
+  color: var(--primary);
+  border-bottom-color: var(--primary);
+}
+
+.tab-panel {
+  display: none;
+  animation: fadeIn 0.3s ease-out;
+}
+
+.tab-panel.active {
+  display: block;
+}
+
+/* ==========================================================================
+   DRAG & DROP ZONE STYLING
+   ========================================================================== */
+.drop-zone {
+  border: 2px dashed rgba(255, 255, 255, 0.15);
+  border-radius: 1rem;
+  padding: 3rem 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  background: rgba(255, 255, 255, 0.01);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-align: center;
+}
+
+.drop-zone.dragover {
+  border-color: var(--primary);
+  background: rgba(59, 130, 246, 0.08);
+  box-shadow: 0 0 20px rgba(59, 130, 246, 0.2);
+}
+
+.upload-icon {
+  width: 3rem;
+  height: 3rem;
+  color: var(--text-muted);
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.drop-zone:hover .upload-icon, .drop-zone.dragover .upload-icon {
+  color: var(--primary);
+  transform: translateY(-4px);
+}
+
+.drop-zone p {
+  font-size: 0.95rem;
+  color: var(--text-main);
+}
+
+.file-spec {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+.upload-feedback {
+  margin-top: 1rem;
+  padding: 0.75rem 1.25rem;
+  border-radius: 0.5rem;
+  font-size: 0.85rem;
+  font-weight: 500;
+  line-height: 1.4;
+  animation: slideUp 0.3s ease-out;
+}
+
+.upload-feedback.success {
+  background: rgba(16, 185, 129, 0.15);
+  border: 1px solid rgba(16, 185, 129, 0.3);
+  color: #34d399;
+}
+
+.upload-feedback.error {
+  background: rgba(239, 68, 68, 0.15);
+  border: 1px solid rgba(239, 68, 68, 0.3);
+  color: #f87171;
+}
+
+/* ==========================================================================
+   JSON TEMPLATE AND CODE VIEWER
+   ========================================================================== */
+.json-template-container {
+  margin-top: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.template-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.copy-btn {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: var(--text-muted);
+  padding: 0.3rem 0.75rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-family: inherit;
+  font-size: 0.75rem;
+  font-weight: 700;
+  transition: all 0.2s ease;
+}
+
+.copy-btn:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.copy-btn.copied {
+  background: rgba(16, 185, 129, 0.15);
+  border-color: rgba(16, 185, 129, 0.3);
+  color: #34d399;
+}
+
+.copy-btn svg {
+  width: 0.85rem;
+  height: 0.85rem;
+}
+
+.template-code-wrapper {
+  background: rgba(15, 23, 42, 0.9);
+  border: 1px solid var(--border);
+  border-radius: 0.75rem;
+  padding: 1rem;
+  max-height: 180px;
+  overflow-y: auto;
+}
+
+.template-code-wrapper pre {
+  margin: 0;
+}
+
+.template-code-wrapper code {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 0.8rem;
+  color: #38bdf8; /* beautiful light blue for code syntax */
+  white-space: pre;
+}
+
+/* Custom Scrollbars */
+.template-code-wrapper::-webkit-scrollbar, .builder-tasks-list::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+.template-code-wrapper::-webkit-scrollbar-thumb, .builder-tasks-list::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 3px;
+}
+.template-code-wrapper::-webkit-scrollbar-track, .builder-tasks-list::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* ==========================================================================
+   DYNAMIC SCHEDULE BUILDER FORM STYLING
+   ========================================================================== */
+.builder-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  width: 100%;
+}
+
+.form-row {
+  display: flex;
+  gap: 1rem;
+  width: 100%;
+}
+
+.builder-form label {
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  letter-spacing: 0.5px;
+}
+
+.builder-form input[type="text"], .builder-form select {
+  background: rgba(15, 23, 42, 0.6);
+  border: 1px solid var(--border);
+  border-radius: 0.5rem;
+  padding: 0.65rem 0.9rem;
+  color: white;
+  font-family: inherit;
+  font-size: 0.9rem;
+  transition: all 0.2s ease;
+  outline: none;
+}
+
+.builder-form input[type="text"]:focus, .builder-form select:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 10px rgba(59, 130, 246, 0.2);
+}
+
+.builder-tasks-section {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  border-top: 1px solid var(--border);
+  padding-top: 1.2rem;
+}
+
+.builder-tasks-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.add-task-btn {
+  background: rgba(59, 130, 246, 0.15);
+  border: 1px solid rgba(59, 130, 246, 0.3);
+  color: var(--primary);
+  padding: 0.3rem 0.8rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-family: inherit;
+  font-size: 0.75rem;
+  font-weight: 700;
+  transition: all 0.2s ease;
+}
+
+.add-task-btn:hover {
+  background: var(--primary);
+  color: white;
+  box-shadow: 0 0 10px var(--primary-glow);
+}
+
+.add-task-btn svg {
+  width: 0.85rem;
+  height: 0.85rem;
+}
+
+.builder-tasks-list {
+  max-height: 200px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  padding-right: 0.25rem;
+}
+
+.builder-task-row {
+  display: grid;
+  grid-template-columns: 1fr 100px 80px 40px;
+  gap: 0.5rem;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  animation: slideUp 0.25s ease-out;
+}
+
+.builder-task-row input, .builder-task-row select {
+  padding: 0.5rem !important;
+  font-size: 0.85rem !important;
+}
+
+.remove-task-row-btn {
+  background: transparent;
+  border: none;
+  color: #f87171;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem;
+  border-radius: 0.25rem;
+  transition: background 0.2s;
+}
+
+.remove-task-row-btn:hover {
+  background: rgba(239, 68, 68, 0.1);
+}
+
+.remove-task-row-btn svg {
+  width: 1.1rem;
+  height: 1.1rem;
+}
+
+.submit-btn {
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  border: none;
+  color: white;
+  padding: 0.8rem 1.5rem;
+  border-radius: 0.5rem;
+  font-family: inherit;
+  font-weight: 700;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-align: center;
+  box-shadow: 0 4px 15px rgba(139, 92, 246, 0.3);
+  margin-top: 0.5rem;
+}
+
+.submit-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(139, 92, 246, 0.5);
+  filter: brightness(1.1);
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+  .form-row {
+    flex-direction: column;
+    gap: 1.2rem;
+  }
+  .builder-task-row {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
+    gap: 0.5rem;
+  }
+  .builder-task-row input:first-child {
+    grid-column: span 2;
+  }
+  .remove-task-row-btn {
+    grid-column: span 2;
+    justify-content: center;
+  }
+}
