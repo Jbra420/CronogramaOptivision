@@ -19,7 +19,7 @@ export const DEFAULT_SCHEDULES: Schedule[] = [
         name: 'Jessica',
         avatar: 'JE',
         gradient: 'gradient-2',
-        desc: 'Diseño UI/UX completo e interactivo.'
+        desc: 'Diseño UI/UX interactivo directo en HTML/TS/CSS, utilizando Google AI Studio.'
       },
       {
         member: 'carlos',
@@ -72,10 +72,10 @@ export const DEFAULT_SCHEDULES: Schedule[] = [
           },
           {
             id: 'r1-t5',
-            text: 'Diseño inicial de wireframes.',
+            text: 'Prototipo inicial HTML/TS/CSS.',
             responsable: { name: 'Jessica', class: 'jessica' },
             weeks: [1],
-            desc: 'Jessica comenzará el bosquejo de baja fidelidad (wireframes) de las pantallas clave de la aplicación móvil, definiendo la distribución visual básica.'
+            desc: 'Jessica comenzará el maquetado del prototipo inicial directo en HTML, TS y CSS, definiendo la estructura y distribución visual básica.'
           },
           {
             id: 'r1-t6',
@@ -121,10 +121,10 @@ export const DEFAULT_SCHEDULES: Schedule[] = [
           },
           {
             id: 'r2-t5',
-            text: 'Desarrollo wireframes detallados.',
+            text: 'Prototipado detallado con IA.',
             responsable: { name: 'Jessica', class: 'jessica' },
             weeks: [1],
-            desc: 'Jessica refinará los wireframes iniciales añadiendo más detalle a la navegación, los estados de UI y los componentes interactivos.'
+            desc: 'Jessica refinará el prototipo interactivo en HTML, TS y CSS, detallando la navegación y componentes usando Google AI Studio.'
           }
         ]
       },
@@ -149,10 +149,10 @@ export const DEFAULT_SCHEDULES: Schedule[] = [
           },
           {
             id: 'r3-t3',
-            text: 'Validación UI/UX.',
+            text: 'Validación de prototipos funcionales.',
             responsable: { name: 'Jessica', class: 'jessica' },
             weeks: [1],
-            desc: 'El equipo revisará los wireframes de Jessica para asegurar que cumplen con el flujo de usuario deseado antes de pasar a alta fidelidad.'
+            desc: 'El equipo validará la funcionalidad del prototipo directo en HTML/TS/CSS para verificar el flujo de usuario deseado.'
           },
           {
             id: 'r3-t4',
@@ -191,10 +191,10 @@ export const DEFAULT_SCHEDULES: Schedule[] = [
           },
           {
             id: 'r4-t4',
-            text: 'Correcciones UI iniciales.',
+            text: 'Correcciones de maquetación en código.',
             responsable: { name: 'Jessica', class: 'jessica' },
             weeks: [2],
-            desc: 'Jessica aplicará feedback técnico a los diseños y comenzará a definir los tokens de diseño para la fase de alta fidelidad.'
+            desc: 'Jessica aplicará feedback técnico directamente sobre las hojas de estilo y la maquetación en HTML/CSS, refinando los estilos.'
           },
           {
             id: 'r4-t5',
@@ -226,10 +226,10 @@ export const DEFAULT_SCHEDULES: Schedule[] = [
           },
           {
             id: 'r5-t3',
-            text: 'Diseño Hi-Fi.',
+            text: 'Prototipo final en HTML/TS/CSS.',
             responsable: { name: 'Jessica', class: 'jessica' },
             weeks: [2],
-            desc: 'Jessica entregará las interfaces en Alta Fidelidad (Hi-Fi) mostrando el aspecto visual final que tendrá la app OptiVision.'
+            desc: 'Jessica entregará el prototipo funcional de alta fidelidad completo en HTML, TS y CSS mostrando el aspecto visual final de la app.'
           },
           {
             id: 'r5-t4',
@@ -264,7 +264,7 @@ export const DEFAULT_SCHEDULES: Schedule[] = [
             text: 'Validación visual final.',
             responsable: { name: 'Jessica', class: 'jessica' },
             weeks: [3],
-            desc: 'Jessica verificará que la implementación en .NET MAUI coincida exactamente con los diseños Hi-Fi.'
+            desc: 'Jessica verificará que la maquetación del prototipo coincida con la UI integrada final en el proyecto.'
           },
           {
             id: 'r6-t4',
@@ -390,7 +390,7 @@ export const DEFAULT_SCHEDULES: Schedule[] = [
         name: 'Juan Bravo',
         avatar: 'JB',
         gradient: 'gradient-1',
-        desc: 'Frontend Lead: Responsable del diseño Figma, maquetación del Portal Ciudadano, formularios interactivos en Angular, consumo de APIs HTTP, componentes web y la integración del widget de firmas Web3/Metamask.'
+        desc: 'Frontend Lead: Responsable del prototipado directo en HTML/TS/CSS asistido por Google AI Studio, maquetación del Portal Ciudadano, formularios interactivos en React Vite, consumo de APIs HTTP, componentes web y la integración del widget de firmas Web3/Metamask.'
       },
       {
         member: 'alexis',
@@ -422,10 +422,10 @@ export const DEFAULT_SCHEDULES: Schedule[] = [
           },
           {
             id: 'piensa-t3',
-            text: 'Bocetos y diseño Hi-Fi de pantallas en Figma.',
+            text: 'Prototipado interactivo en HTML, TS y CSS con IA.',
             responsable: { name: 'Juan Bravo (Front)', class: 'juan' },
             weeks: [2],
-            desc: 'Diseño de la experiencia del ciudadano (carga de planos) y paneles de control para funcionarios del GAD, estructurando flujos interactivos de alta fidelidad. Recursos: Figma, Canva, Laptops.'
+            desc: 'Diseño y desarrollo directo en HTML, TS y CSS de la experiencia del ciudadano (carga de planos) y paneles de control, usando Google AI Studio. Recursos: HTML, CSS, TS, Google AI Studio, Laptops.'
           },
           {
             id: 'piensa-t4',
@@ -443,10 +443,10 @@ export const DEFAULT_SCHEDULES: Schedule[] = [
         tasks: [
           {
             id: 'piensa-t5',
-            text: 'Inicializar workspace de Angular y Material.',
+            text: 'Inicializar workspace de React Vite.',
             responsable: { name: 'Juan Bravo (Front)', class: 'juan' },
             weeks: [3],
-            desc: 'Estructuración del proyecto Angular, configuración de estilos globales SCSS, tokens del sistema de diseño e instalación de Angular Material. Recursos: Angular CLI, SCSS, VS Code.'
+            desc: 'Estructuración del proyecto React Vite, configuración de estilos globales CSS, tokens del sistema de diseño e instalación de componentes UI. Recursos: Vite, React, CSS, VS Code.'
           },
           {
             id: 'piensa-t6',
@@ -474,7 +474,7 @@ export const DEFAULT_SCHEDULES: Schedule[] = [
             text: 'Portal Ciudadano: Carga de planos PDF.',
             responsable: { name: 'Juan Bravo (Front)', class: 'juan' },
             weeks: [4],
-            desc: 'Desarrollo del formulario web para carga interactiva de archivos PDF de planos y validaciones de formatos en el frontend. Recursos: Angular Material, HTML5, TypeScript.'
+            desc: 'Desarrollo del formulario web para carga interactiva de archivos PDF de planos y validaciones de formatos en el frontend. Recursos: React Vite, HTML5, TypeScript.'
           },
           {
             id: 'piensa-t9',
@@ -488,7 +488,7 @@ export const DEFAULT_SCHEDULES: Schedule[] = [
             text: 'Dashboard de Funcionarios y Estados.',
             responsable: { name: 'Juan Bravo (Front)', class: 'juan' },
             weeks: [5],
-            desc: 'Implementación del panel de control de técnicos y secretarios para listar trámites entrantes, visualizar planos y gatillar cambios de estados. Recursos: Angular Material Tables, CSS Grid.'
+            desc: 'Implementación del panel de control de técnicos y secretarios para listar trámites entrantes, visualizar planos y gatillar cambios de estados. Recursos: React Tables, CSS Grid.'
           }
         ]
       },
@@ -502,7 +502,7 @@ export const DEFAULT_SCHEDULES: Schedule[] = [
             text: 'Consumo de servicios HTTP y Route Guards.',
             responsable: { name: 'Juan Bravo (Front)', class: 'juan' },
             weeks: [6],
-            desc: 'Suscripción a servicios HTTP de NestJS en Angular para operaciones de login y envío de documentos. Activación de Route Guards para proteger dashboards. Recursos: RxJS, Angular HTTPClient.'
+            desc: 'Suscripción a servicios HTTP de NestJS en React Vite para operaciones de login y envío de documentos. Activación de Route Guards / Context para proteger dashboards. Recursos: Axios, React Router.'
           },
           {
             id: 'piensa-t12',
@@ -523,7 +523,7 @@ export const DEFAULT_SCHEDULES: Schedule[] = [
             text: 'Integración Web3 en Frontend con Metamask.',
             responsable: { name: 'Juan Bravo (Front)', class: 'juan' },
             weeks: [7],
-            desc: 'Conexión de billetera Metamask en Angular mediante ethers.js/web3.js para solicitar firma criptográfica de planos y enviar transacciones al RegistryGAD. Recursos: ethers.js, Metamask, Web3.'
+            desc: 'Conexión de billetera Metamask en React Vite mediante ethers.js/web3.js para solicitar firma criptográfica de planos y enviar transacciones al RegistryGAD. Recursos: ethers.js, Metamask, Web3.'
           }
         ]
       },
